@@ -18,3 +18,7 @@ https://www.selenium.dev/downloads/
     <artifactId>selenium-java</artifactId>
     <version>4.0.0-alpha-6</version>
 </dependency>
+
+### download the chromedriver.exe for ChromeDriver to work with.
+https://sites.google.com/a/chromium.org/chromedriver/
+https://chromedriver.storage.googleapis.com/index.html?path=88.0.4324.96/
