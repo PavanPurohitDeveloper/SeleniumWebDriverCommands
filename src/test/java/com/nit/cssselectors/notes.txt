@@ -1,0 +1,52 @@
+//input[@id='username']  -> xpath way
+# - represent id
+. - represent class
+#username  ( synatx: #<id> )
+input#username
+input[id=username]
+
+
+==> flipkart.com
+//input[@class='_2zrpKA _1dBPDZ']
+._2zrpKA._1dBPDZ
+input._2zrpKA._1dBPDZ
+body > div.mCRfo9 > div > div > div > div > div.Km0IJL.col.col-3-5 > div > form > div:nth-child(1) > input
+
+
+
+div.form__input--floating > input#username   ( > -> traversing symbol )
+
+//form[@autocomplete='on']/div[1]/input  -- using xpath
+//form[@autocomplete='on']/div[2]/input  -- using xpath
+
+form[autocomplete=on] > div:nth-child(1) > input
+
+form[autocomplete=on] input  -> under this form tag get all input tags
+
+
+//ul[@class='navbar-nav']/li/a
+ul.navbar-nav > li > a
+
+ul.navbar-nav a  -> under ul tag whose class name is navbar-nav, get me all the anchor tags.
+
+div.custom-scroll a  -> get all the links under division tag.
+div.custom-scroll > ul > li:nth-child(3) > a  --> this gives me 3rd li tag.
+
+//form[@autocomplete='on']/div[2]/label  -- xpath way
+form[autocomplete=on] > div:nth-child(2) > :nth-child(3)  -- CSS way ( nth-child(3)  - directly child count)
+
+//div[@class='col-12-12 _2tVp4j']/input[2]  -- xpath way - go to 2nd input tag under div tag
+div.col-12-12._2tVp4j > input:nth-child(4)
+
+form[autocomplete=on]
+
+input[id^=xxxxx]
+input[id$=xxxxx]
+
+
+
+
+
+
+
+
