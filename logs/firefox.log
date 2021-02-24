@@ -1,0 +1,4 @@
+1614111322247	geckodriver	INFO	Listening on 127.0.0.1:12967
+1614111356089	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\pavan\\AppData\\Local\\Temp\\rust_mozprofileFbCciy"
+1614111358013	Marionette	INFO	Listening on port 50603
+1614111358138	Marionette	WARN	TLS certificate errors will be ignored for this session
