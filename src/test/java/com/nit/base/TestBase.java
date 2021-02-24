@@ -44,8 +44,12 @@ public class TestBase {
             options.addArguments("--start-maximized");
             driver = new EdgeDriver(options);
         }
+        /* Implicit wait is a dynamic wait .. It will constantly pool the web page as soon it finds the element
+        its uses it and move forward, If it doesnt find , it will wiat till the Timeout given (Ex: 20 seconds)
+        generally I prefer to give generic timeout of 20 seocnds for any element to findout on webpage.
+         **/
         // dynamic wait- not pause
-        // global time out- all driver.findelement
+        // global time out- all driver.findelement() command
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         return driver;

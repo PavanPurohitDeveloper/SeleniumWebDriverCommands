@@ -1,0 +1,161 @@
+Address of element
+
+Complete Xpath / Absolute Xpath:
+---------------------------------
+html/body/div/main/div[2]/div[2]/h1
+html/body/div/main/div[2]/div[2]/h1
+html/body/div/main/div[2]/form/div[2]/input
+
+
+Partial Xpath
+---------------
+//* - all the tags on the page
+//a  - all the links on the page
+//input
+//*[@id='username']
+//input[@id='username']
+==> chrome does is it finds the nearest element with id and try to build xpath from there..
+//*[@id="app__container"]/main/div[2]/div[2]/h1
+//*[@id="intl_homepage-injection-zone-1"]/div[2]/div/div/div/ul/li[4]/article/div/div/h3/a/span[1]
+/html/body/div[7]/section[1]/div[2]/div/div/div/ul/li[4]/article/div/div/h3/a/span[1]
+
+custom xpaths:
+Xpaths should be uniquely boiled down to an element. class is generally not unique..
+//input[@name='session_key'] --> input type whose name is session_key
+
+
+One element - multiple xpath
+//*[@id='email']
+//input[@name='email']
+
+--> dont use these kind of xpath by using and , or
+//input[@name='email' and @id='email']
+//input[@name='pass' or @id='email']
+
+//table[@role='presentation']/tbody/tr[2]/td[1]/input
+//table[@role='presentation']/tbody/tr[2]/td[1]/input[@name='email']
+//table[@role='presentation']/tbody/tr[2]/td[1]/input
+
+//input[@class='_2zrpKA _1dBPDZ']
+//form[@autocomplete='on']/div[2]/input
+/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input
+
+Multiple Elements - same xpath
+//a  --> represents all the links on Page.
+//div[@class='_1vC4OE']  - all prices has same class ( It Extract all the prices from flipkart )
+
+//ul[@class='navbar-nav']/li[1]/a - first link
+//ul[@class='navbar-nav']/li[2]/a - represent second link
+
+//ul[@class='navbar-nav']/li/a -- represent every link li tags
+//ul[@class='navbar-nav mr-auto']/li/a -- representing multiple elements.
+
+--> https://universityofcalifornia.edu
+//div[@id='block-block-10']/article[3]/footer/div[1]
+//div[@id='block-block-10']/article/footer/div[1]  -- gives me all the footers of all articles of this page.
+
+.... Identify the elements based on Text ....
+//a[text()='Edition IN']
+//td[text()='12']
+
+.... Variable IDs: ....
+Ex: snapdeal.com
+display-price-651088674907  (this number might change at times - id itself varies)
+display-price-128371827312
+
+There are 2 functions in JS:- contains() and starts-with()
+contains
+starts-with
+XXXXXXX1273671823  //*[starts-with(@id,'XXXXXXX')], //*[contains(@id,'XXXXXXX')]
+123817823XXXXXXXX  //*[contains(@id,'XXXXXXX')]
+123751XXXXX716238  //*[contains(@id,'XXXXXXX')]
+12836172381238618   no solution but to make some other xpath.. if whole id changes dynamically.
+
+//article[contains(@class,'gridlet  two-column sticky internal pointer node')]
+
+http://www.nullskull.com/articles/SumCaptchaTest.aspx
+
+
+................................Position...........................................
+//ul[@class='sc-kAzzGY fDqWjJ']/li[3]/a  --> This will give 3rd li tag
+//ul[@class='sc-kAzzGY fDqWjJ']/li[position()=3]/a
+
+//div[@class='_3qd5C5']
+//div[@class='_3qd5C5'][3]
+//div[@class='_3qd5C5']/a
+//div[@class='_3qd5C5'][position()=2]/a
+//div[@class='_3qd5C5'][2]/a
+
+................................ancestor/descendant...........................................
+ancestor is the tags above the tag and it goes rootwise.
+descendant - are all the tags which are under the tag.
+
+//ul[@id='menu-main-menu']/li/a
+//ul[@id='menu-main-menu']/descendant::a  -> under this ul tag get all the links..
+//div[@class='_3qd5C5']/descendant::a
+//div[@class='_2NHqR1 row']/descendant::a
+
+//div[@class='_2NHqR1 row']/ancestor::div[2]/div[1] -> get all the ancestor tags ( ancestor hierarchy)..goes under root wise..
+
+................................child/parent...........................................
+Every tag has got child tags..
+child/parent tags are - Immediate tags below or above the current tag on which you are working..
+
+//div[@class='TW4owM']/child::div  -> Immediate tag under the tag is known as child tag.. Immediate elements under one element then we use child
+//div[@class='TW4owM']/parent::div -> Immediate above tag
+
+................................Following/preceding...........................................
+//div[@class='_2NHqR1 row']/following::a -> represents  after this element tag - get all the links
+//div[@class='_2NHqR1 row']/preceding::a  -> means All the elements preceding before this particular link.
+//div[@class='_2NHqR1 row']/preceding::div
+
+................................following-sibling/preceding-sibling...........................................
+//div[@class='_2NHqR1 row']/following-sibling::div
+
+//*[@id="align"]/span[5]/input
+//span[text()='Microsoft Excel']/input
+//label[text()='Female']/preceding-sibling::input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+inputtext login_form_input_box
+
+
+
+
+
+
+
