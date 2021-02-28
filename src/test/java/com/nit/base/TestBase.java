@@ -1,5 +1,6 @@
 package com.nit.base;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -21,6 +22,7 @@ public class TestBase {
         if(browserName.equals("Mozilla")) {
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "logs\\firefox.log");
             FirefoxOptions options  = new FirefoxOptions();
+            options.setPageLoadStrategy(PageLoadStrategy.EAGER);
             FirefoxProfile prof = new FirefoxProfile();// new profile
             prof.setPreference("dom.webnotifications.enabled", false);
             options.setProfile(prof);
@@ -31,7 +33,7 @@ public class TestBase {
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
             ChromeOptions ops = new ChromeOptions();
             //ops.setBinary("");
-            //ops.setPageLoadStrategy(strategy)
+            ops.setPageLoadStrategy(PageLoadStrategy.EAGER);
             ops.addArguments("--disable-notifications");
             ops.addArguments("--start-maximized");
             driver = new ChromeDriver(ops);
